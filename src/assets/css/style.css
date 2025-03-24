@@ -1,0 +1,13 @@
+@import "tailwindcss";
+
+html, body, #root{
+  @apply h-full;
+}
+
+body{
+  font-family: "Poppins", sans-serif;
+}
+
+.app-shadow {
+  box-shadow: 0 0 100px -8px rgba(0, 0, 0, 0.1);
+}
