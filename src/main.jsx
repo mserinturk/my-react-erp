@@ -1,10 +1,13 @@
+import App from './App.jsx'
+import { Provider } from 'react-redux'
 import { createRoot } from 'react-dom/client'
+import { store } from './store/index.jsx'
 
 import './assets/css/style.css'
 import './assets/css/fontawesome.all.min.css'
 
-import App from './App.jsx'
-
 createRoot(document.getElementById('root')).render(
-  <App />
+  <Provider store={store}>
+    <App />
+  </Provider>
 )
