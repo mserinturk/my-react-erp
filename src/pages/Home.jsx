@@ -1,13 +1,24 @@
-import React from 'react'
-import { useSelector } from 'react-redux'
+import { useEffect } from 'react'
+import { useDispatch, useSelector } from 'react-redux'
+import { fetchUsers } from '../features/user/UserSlice'
 
-function Home() {
+const Home = () => {
+  const dispatch = useDispatch()
+  const { users, loading, error } = useSelector((state) => state.user)
 
-  const state = useSelector((store) => store.user);
-  console.log(state.user, state.isLoggedIn)
+  useEffect(() => {
+    dispatch(fetchUsers())
+  }, [dispatch])
+
+  if (loading) return <p>Loading...</p>
+  if (error) return <p>Error: {error}</p>
 
   return (
-    <div>ERP Dashboard</div>
+    <ul>
+      {users.map((user) => (
+        <li key={user.id}>{user.name}</li>
+      ))}
+    </ul>
   )
 }
 
