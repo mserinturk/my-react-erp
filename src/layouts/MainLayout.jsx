@@ -1,14 +1,17 @@
 import React from 'react'
-import { Outlet } from "react-router-dom"
-import Header from '../components/Header'
-
+import Header from './Header'
+import Main from './Main'
+import Menu from './Menu'
 
 function MainLayout() {
   return (
-    <div className='h-full flex flex-col'>
-      <Header></Header>
-      <div className='h-full p-10'>
-        <Outlet />
+    <div className='h-full flex'>
+      <div>
+        <Menu />
+      </div>
+      <div className='flex flex-col w-full'>
+        <Header />
+        <Main />
       </div>
     </div>
   )

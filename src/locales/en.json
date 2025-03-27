@@ -1,0 +1,8 @@
+{
+  "menu": {
+    "dashboard": "Dashboard",
+    "home": "Home",
+    "user": "User",
+    "todo": "Todo"
+  }
+}
