@@ -1,4 +1,6 @@
 @import "tailwindcss";
+@custom-variant dark (&:where(.dark, .dark *));
+
 
 html, body, #root{
   @apply h-full;
@@ -10,4 +12,12 @@ body{
 
 .app-shadow {
   box-shadow: 0 0 100px -8px rgba(0, 0, 0, 0.1);
+}
+
+.app-modal{
+  height: 80vh;
+  margin-top: 5vh;
+  margin-bottom: 5vh;
+  max-width: 90%;
+  width: 850px;
 }

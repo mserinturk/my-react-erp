@@ -1,8 +1,9 @@
-import React from 'react'
-import Icon from '../components/Icon'
-import MenuList from '../constans/Menu'
+import React, { useEffect, useState } from 'react'
 import { Link, useLocation } from 'react-router-dom'
 import { useTranslation } from 'react-i18next'
+import Icon from '../components/Icon'
+import MenuList from '../constans/Menu'
+import Modal from '../components/Modal'
 
 function Menu() {
   const { t } = useTranslation()
@@ -12,25 +13,44 @@ function Menu() {
     menu.children.some(child => location.pathname === child.path)
   )?.id
 
+  const [visible, setVisible] = useState(false)
+
+  const [menuState, setMenuState] = useState(() => {
+    const settings = JSON.parse(localStorage.getItem('settings')) || {}
+    return settings.menu || 'open'
+  })
+
+  useEffect(() => {
+    const handleMenuToggle = () => {
+      const settings = JSON.parse(localStorage.getItem('settings')) || {}
+      setMenuState(settings.menu || 'open')
+    }
+
+    window.addEventListener('menuToggle', handleMenuToggle)
+    return () => window.removeEventListener('menuToggle', handleMenuToggle)
+  }, [])
+
   return (
-    <div className='w-80 h-full flex'>
-      <div className='h-full w-16 flex flex-col border-r border-gray-200'>
+    <div className='h-full flex'>
+      <div className={'h-full w-16 flex flex-col '+ `${menuState == 'open' ? 'border-r border-gray-200' : 'border-none'}`}>
         <div className='flex h-20 items-center justify-center'>
-          <Icon name="superpowers" type="brands" className="text-4xl text-blue-600" />
+          <Icon name="superpowers" type="brands" className="!text-2xl text-blue-600" />
         </div>
 
-        <div className='flex flex-col items-center flex-1 space-y-5 py-5'>
+        <div className="flex flex-col items-center flex-1 space-y-5 py-5">
           {
             MenuList.map((menu) => {
               const isActive = menu.id === activeGroupId
               return (
                 <div key={menu.key}>
                   <Link to={menu.path}>
-                    <Icon
-                      name={menu.icon}
-                      type="duotone"
-                      className={`text-xl transition-all ${isActive ? 'text-blue-600' : 'text-gray-400 hover:text-blue-600'}`}
-                    />
+                    <div className={`rounded-lg p-2 hover:bg-blue-50 ${isActive ? 'bg-blue-50 ' : ''}`}>
+                      <Icon
+                        name={menu.icon}
+                        type="duotone"
+                        className={`text-md transition-all w-5 text-center ${isActive ? 'text-blue-600' : 'text-gray-400'}`}
+                      />
+                    </div>
                   </Link>
                 </div>
               )
@@ -38,11 +58,11 @@ function Menu() {
           }
         </div>
         <div className='h-12 flex items-center justify-center'>
-          <Icon name="gear" type="duotone" className="text-xl text-gray-500" />
+          <Icon name="gear" type="duotone" className="text-xl text-gray-500 hover:text-gray-600" onClick={() => setVisible(true)}/>
         </div>
       </div>
 
-      <div className='w-64 px-5'>
+      <div className={`${menuState == 'open' ? 'w-64 px-5 transition-all' : 'w-0 transition-all overflow-hidden'}`}>
         {
           MenuList.filter(menu => menu.id === activeGroupId).map((menu) => (
             <nav key={menu.key} className='h-full'>
@@ -72,6 +92,17 @@ function Menu() {
           ))
         }
       </div>
+
+      <Modal 
+        visible={visible} 
+        onClose={() => setVisible(false)} 
+        icon="gear" 
+        title="Settings" 
+        description="Bu alandan ayarları düzenleyebilirsiniz."
+        footer="footer"
+        >
+          sadfasdf
+      </Modal>
     </div>
   )
 }
