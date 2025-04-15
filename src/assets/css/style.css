@@ -3,7 +3,7 @@
 
 
 html, body, #root{
-  @apply h-full;
+  @apply h-full text-gray-900 dark:text-neutral-400;
 }
 
 body{
@@ -14,10 +14,78 @@ body{
   box-shadow: 0 0 100px -8px rgba(0, 0, 0, 0.1);
 }
 
-.app-modal{
-  height: 80vh;
-  margin-top: 5vh;
-  margin-bottom: 5vh;
-  max-width: 90%;
-  width: 850px;
+.dark .app-shadow{
+  box-shadow: none!important;
+}
+
+.app-modal-large{
+  height: 100vh;
+  width: 100vw;
+}
+
+.app-modal-mini{
+  height: 100vh;
+  width: 100vw;
+}
+
+input[type="text"] {
+  @apply focus:outline-0 focus:border-gray-400 dark:focus:border-neutral-700
+}
+
+.MuiInputBase-fullWidth{
+  border-radius: 14px!important;
+}
+
+.MuiInputBase-fullWidth{
+  @apply h-11 rounded-4xl
+}
+
+@media only screen and (min-width: 640px) {
+  .app-modal-large{
+    height: 80vh;
+    margin-top: 5vh;
+    margin-bottom: 5vh;
+    max-width: 90%;
+    width: 850px;
+  }
+  
+  .app-modal-mini{
+    height: 40vh;
+    margin-top: 5vh;
+    margin-bottom: 35vh;
+    max-width: 90%;
+    width: 750px;
+  }
+}
+
+/*Mui Menu Design*/
+.MuiSimpleTreeView-root.css-1o8c9x7-MuiSimpleTreeView-root .MuiTreeItem-content.css-1kk8xoz-MuiTreeItem-content{
+  padding: 12px 0; 
+}
+
+.MuiCollapse-wrapper .MuiTreeItem-iconContainer{
+  display: none!important;
+}
+
+.MuiCollapse-wrapper i{
+  width: 25px;
+  text-align: center;
+  margin-right: 0px;
+}
+
+.css-1slhtig-MuiTreeItem-content.Mui-selected, .css-1kk8xoz-MuiTreeItem-content.Mui-selected{
+  background: none!important;
+}
+
+.MuiTreeItem-label{
+  font-size: 15px!important;
+}
+
+/*Table*/
+.MuiTableBody-root{
+  @apply dark:bg-neutral-900 bg-white
+}
+
+.MuiTableBody-root td{
+  @apply text-gray-500 dark:text-neutral-400
 }

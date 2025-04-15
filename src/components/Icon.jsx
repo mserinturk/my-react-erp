@@ -4,7 +4,7 @@ function Icon(props) {
   const {name = "", type = "light", className, size = "lg", onClick} = props
   return (
     <div>
-      <i className={`fa-${type} fa-${name} text-${size} ${className || ''} ${onClick ? 'cursor-pointer' : ''}`} onClick={onClick}></i>
+      <i className={`fa-${type} fa-${name} text-${size} ${className || ''} ${onClick ? 'cursor-pointer' : ''} text-gray-500 dark:text-neutral-400`} onClick={onClick}></i>
     </div>
   )
 }

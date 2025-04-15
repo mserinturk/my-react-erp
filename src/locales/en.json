@@ -1,8 +1,46 @@
 {
+  "search": "Search",
+  "search_not_found_description": "No results found for",
+  "popular_search": "Popular Search",
+  "settings": {
+    "settings_title": "Settings",
+    "settings_description": "Use settings to personalize your app experience.",
+    "select_language": "Select Language",
+    "select_language_description": "Your language preference is applied instantly and saved on your device.",
+    "dark_mode": "Enable Dark Theme",
+    "dark_mode_description": "Switch to a darker interface to reduce eye strain, especially in low-light environments.",
+    "turkish": "Turkish",
+    "english": "English"
+  },
   "menu": {
     "dashboard": "Dashboard",
     "home": "Home",
+    "team": "Team",
     "user": "User",
-    "todo": "Todo"
+    "todo": "Todo",
+    "operation": "Operation",
+    "operation1": "Operation"
+  },
+  "modules": {
+    "teams": {
+      "index": "Teams",
+      "create": "Create Team",
+      "show": "Team Details",
+      "edit": "Edit Team",
+      "save": "Save Team",
+      "update": "Update Team"
+    }
+  },
+  "views": {
+    "teams": {
+      "id": "Team ID",
+      "name": "Team Name",
+      "name_description": "Please specify the team name.",
+      "description": "Team Description",
+      "description_description": "Please specify your team's description.",
+      "created_at": "Created At"
+      
+    }
   }
+  
 }

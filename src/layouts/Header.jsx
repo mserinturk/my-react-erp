@@ -1,21 +1,16 @@
 import React, { useEffect, useState } from 'react'
 import Icon from '../components/Icon'
 import Search from '../components/Search'
-
+import { useMobileMenu } from '../contexts/MobileMenuContext'
+import { Link } from 'react-router-dom'
 
 function Header() {
-
+  const { openMobileMenu } = useMobileMenu()
+  
   const settings = JSON.parse(localStorage.getItem('settings')) || {}
 
-  const [theme, setTheme] = useState(settings.theme)
   const [menu, setMenu] = useState(settings.menu)
-
-  const changeTheme = (newTheme) => {
-    setTheme(newTheme)
-    const updatedSettings = { ...settings, theme: newTheme }
-    localStorage.setItem('settings', JSON.stringify(updatedSettings))
-  }
-
+  
   const toggleMenu = (newMenu) => {
     setMenu(newMenu)
     const updatedSettings = { ...settings, menu: newMenu }
@@ -23,37 +18,31 @@ function Header() {
     window.dispatchEvent(new Event('menuToggle'))
   }
 
-  useEffect(() => {
-    if (theme === 'dark') {
-      document.documentElement.classList.add('dark')
-    } else {
-      document.documentElement.classList.remove('dark')
-    }
-  }, [theme])
-
   return (
-    <div className='h-20 flex items-center px-5 dark:bg-gray-200'>
+    <div className='sm:h-20 h-16 flex items-center px-5 dark:bg-neutral-900'>
       <div className='w-fit'>
         {
           menu == 'open' ?
-          <Icon name="chevron-left" type="solid" className="text-blue-600" onClick={()=>{toggleMenu('close')}}></Icon>
+          <Icon name="bars-staggered" type="solid" className="!text-blue-600" onClick={()=>{toggleMenu('close')}}></Icon>
           :
-          <Icon name="bars-staggered" type="solid" className="text-blue-600" onClick={()=>{toggleMenu('open')}}></Icon>
+          <div>
+            <div className="!text-blue-600 hidden md:block">
+              <Icon name="bars" type="solid" onClick={()=>{toggleMenu('open')}}></Icon>
+            </div>
+            <div className="!text-blue-600 block md:!hidden">
+              <Icon name="bars" type="solid" onClick={openMobileMenu}></Icon>
+            </div>
+          </div>
         }
       </div>
-      <div className='flex-1 flex justify-center'>
+      <div className='flex-1 hidden sm:flex justify-center'>
         <Search></Search>
       </div>
-      <div className='w-fit flex space-x-3'>
-        {/* <Icon name="bell" type="duotone"></Icon> */}
-        {
-          theme == 'light' ?
-          <Icon name="moon" type="duotone" className="text-gray-700 w-5" onClick={()=>{changeTheme('dark')}}></Icon>
-          :
-          <Icon name="sun-bright" type="duotone" className="text-gray-700 w-5" onClick={()=>{changeTheme('light')}}></Icon>
-        }
-        
-        
+      <div className='flex-1 sm:hidden'>
+        <Link to={"/"} className='flex items-center justify-center space-x-1.5'>
+          <Icon name="superpowers" type="brands" className="!text-xl text-blue-600" />
+          <span className='text-sm'>My React APP</span>
+        </Link>
       </div>
     </div>
   )

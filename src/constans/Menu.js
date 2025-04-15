@@ -11,6 +11,11 @@ export const menu = [
         icon: "home",
       },
       {
+        key: "menu.team",
+        path: "/teams",
+        icon: "users",
+      },
+      {
         key: "menu.user",
         path: "/user",
         icon: "user",
@@ -19,7 +24,7 @@ export const menu = [
         key: "menu.todo",
         path: "/todo",
         icon: "check",
-      }
+      },
     ]
   },
   {

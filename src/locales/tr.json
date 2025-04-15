@@ -1,4 +1,44 @@
 {
-  "hello": "Merhaba",
-  "welcome": "Hoş geldin"
+  "search": "Ara",
+  "search_not_found_description": "İçin sonuç bulunamadı",
+  "popular_search": "Popüler Aramalar",
+  "settings": {
+    "settings_title": "Ayarlar",
+    "settings_description": "Uygulama deneyimini kişiselleştirmek için ayarları kullan.",
+    "select_language": "Dil Seçimi",
+    "select_language_description": "Dil tercihiniz anında uygulanır ve cihazınızda kaydedilir.",
+    "dark_mode": "Karanlık Tema",
+    "dark_mode_description": "Göz yorgunluğunu azaltmak için düşük ışıkta daha iyi bir deneyim sunar.",
+    "turkish": "Türkçe",
+    "english": "İngilizce"
+  },
+  "menu": {
+    "dashboard": "Kontrol Paneli",
+    "home": "Ana Sayfa",
+    "team": "Takımlar",
+    "user": "Kullanıcılar",
+    "todo": "Yapılacaklar",
+    "operation": "Operasyonlar",
+    "operation1": "Operasyonlar"
+  },
+  "modules": {
+    "teams": {
+      "index": "Takımlar",
+      "create": "Takım Oluştur",
+      "show": "Takım Detayları",
+      "edit": "Takımı Düzenle",
+      "save": "Takımı Kaydet",
+      "update": "Takımı Güncelle"
+    }
+  },
+  "views": {
+    "teams": {
+      "id": "Takım ID",
+      "name": "Takım Adı",
+      "name_description": "Lütfen takım adını belirleyin.",
+      "description": "Takım Açıklaması",
+      "description_description": "Lütfen takımın açıklamasını belirleyin.",
+      "created_at": "Oluşturulma Tarihi"
+    }
+  }
 }

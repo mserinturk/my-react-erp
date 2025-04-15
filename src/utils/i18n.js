@@ -1,8 +1,12 @@
 import i18n from 'i18next'
 import { initReactI18next } from 'react-i18next'
 
-import translationTR from '../locales/en.json'
-import translationEN from '../locales/tr.json'
+import translationTR from '../locales/tr.json'
+import translationEN from '../locales/en.json'
+
+const storedLanguage = localStorage.getItem('settings')
+  ? JSON.parse(localStorage.getItem('settings')).language
+  : 'en'
 
 i18n
   .use(initReactI18next)
@@ -11,7 +15,7 @@ i18n
       tr: { translation: translationTR },
       en: { translation: translationEN }
     },
-    lng: 'tr', // varsayılan dil
+    lng: storedLanguage,
     fallbackLng: 'en',
     interpolation: {
       escapeValue: false
