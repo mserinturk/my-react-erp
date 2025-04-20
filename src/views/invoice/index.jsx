@@ -4,11 +4,11 @@ import Module from '../../layouts/module/Module'
 import ModuleHeader from '../../layouts/module/ModuleHeader'
 import ModuleBody from '../../layouts/module/ModuleBody'
 import ModuleMain from '../../layouts/module/ModuleMain'
-import AppButton from '../../components/Button'
+import AppButton from '../../components/ui/Button'
 import { Link } from 'react-router-dom'
 import AppTable from '../../components/Table'
 import { useTranslation } from 'react-i18next'
-import AppDate from '../../components/Date'
+import AppDate from '../../components/ui/Date'
 import { getOrders } from '../../features/order/OrderSlice'
 
 function InvoiceIndex() {

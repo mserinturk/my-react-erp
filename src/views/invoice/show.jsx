@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom'
 import api from '../../services/API'
-import Loading from '../../components/Loading'
-import Icon from '../../components/Icon'
-import AppDate from '../../components/Date'
+import Loading from '../../components/ui/Loading'
+import Icon from '../../components/ui/Icon'
+import AppDate from '../../components/ui/Date'
 import { useTranslation } from 'react-i18next'
 
 function InvoiceShow() {

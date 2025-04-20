@@ -1,5 +1,5 @@
 import React from 'react'
-import Icon from '../components/Icon'
+import Icon from '../components/ui/Icon'
 import Search from '../components/Search'
 import { Link } from 'react-router-dom'
 

@@ -3,9 +3,9 @@ import Module from '../../layouts/module/Module'
 import ModuleHeader from '../../layouts/module/ModuleHeader'
 import ModuleBody from '../../layouts/module/ModuleBody'
 import ModuleMain from '../../layouts/module/ModuleMain'
-import AppButton from '../../components/Button'
-import AppFormRow from '../../components/FormRow'
-import Icon from '../../components/Icon'
+import AppButton from '../../components/ui/Button'
+import AppFormRow from '../../components/ui/FormRow'
+import Icon from '../../components/ui/Icon'
 import { useTranslation } from 'react-i18next'
 import {
   Stepper, Step, StepLabel, TextField, Select,

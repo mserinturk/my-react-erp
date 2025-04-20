@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import Icon from '../components/Icon'
+import Icon from '../components/ui/Icon'
 import Search from '../components/Search'
 import { useMobileMenu } from '../contexts/MobileMenuContext'
 import { Link } from 'react-router-dom'

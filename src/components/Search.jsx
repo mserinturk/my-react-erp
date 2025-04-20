@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from 'react'
-import Icon from './Icon'
+import Icon from './ui/Icon'
 import MenuList from '../constans/Menu'
 import { useTranslation } from 'react-i18next'
 import { Link } from 'react-router-dom'
-import Modal from './Modal'
+import Modal from './ui/Modal'
 
 
 function Search() {

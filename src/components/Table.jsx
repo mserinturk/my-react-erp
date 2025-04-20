@@ -4,8 +4,8 @@ import {
   TableHead, TableRow, Paper, Checkbox, Skeleton
 } from '@mui/material'
 import { useDispatch } from 'react-redux'
-import AppButton from './Button'
-import Icon from './Icon'
+import AppButton from './ui/Button'
+import Icon from './ui/Icon'
 import { useTranslation } from 'react-i18next'
 
 export default function AppTable({ rows, loading, headerCells, rowCells, columnWidths, deleteAction, deletable = true }) {

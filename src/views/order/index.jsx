@@ -5,11 +5,11 @@ import ModuleHeader from '../../layouts/module/ModuleHeader'
 import ModuleBody from '../../layouts/module/ModuleBody'
 import ModuleMain from '../../layouts/module/ModuleMain'
 import { getOrders } from '../../features/order/OrderSlice'
-import AppButton from '../../components/Button'
+import AppButton from '../../components/ui/Button'
 import { Link } from 'react-router-dom'
 import AppTable from '../../components/Table'
 import { useTranslation } from 'react-i18next'
-import Date from '../../components/Date'
+import Date from '../../components/ui/Date'
 import { deleteOrder } from '../../features/order/OrderSlice'
 
 
