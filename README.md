@@ -1,12 +1,42 @@
-# React + Vite
+# 🧾 React ERP Dashboard
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Bu proje, React + Redux Toolkit kullanılarak geliştirilmiş modern bir ERP Dashboard uygulamasıdır.  
+Gerçek dünyadaki ERP sistemlerinden ilham alınarak geliştirilmiş ve şu özellikleri içerir:
 
-Currently, two official plugins are available:
+## ✨ Özellikler
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- ✅ **Customers Modülü**: Müşteri kayıtları oluşturma, güncelleme, silme
+- ✅ **Orders Modülü**: Sipariş oluşturma, durum yönetimi
+- ✅ **Dashboard Sayfası**: Recharts ile görselleştirilmiş sipariş & müşteri grafikleri
+- ✅ **Dark Mode Desteği**
+- ✅ **Dil Desteği** (TR/EN)
+- ✅ **Responsive Tasarım** (Mobil uyumlu)
+- ✅ **Reusable UI Component yapısı**
+- ✅ **Redux Toolkit ile State Yönetimi**
+- ✅ **Netlify üzerinden canlıya alınmış versiyon**
 
-## Expanding the ESLint configuration
+## 🔗 Canlı Demo
 
-If you are developing a production application, we recommend using TypeScript and enable type-aware lint rules. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+👉 [Projeyi Görüntüle](https://mserinturk.netlify.app/)
+
+## 🛠 Kullanılan Teknolojiler
+
+- React
+- Redux Toolkit
+- React Router DOM
+- Axios
+- Tailwind CSS
+- Recharts
+- react-i18next
+- Vite
+- Netlify (Deploy)
+
+## 📦 Kurulum
+
+Projeyi çalıştırmak için aşağıdaki adımları izleyebilirsiniz:
+
+```bash
+git clone https://github.com/mserinturk/my-react-erp.git
+cd my-react-erp
+npm install
+npm run dev
