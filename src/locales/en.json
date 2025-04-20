@@ -1,4 +1,5 @@
 {
+  "welcome": "Welcome",
   "search": "Search",
   "search_not_found_description": "No results found for",
   "popular_search": "Popular Search",
@@ -8,6 +9,7 @@
   "add": "Add",
   "back": "Back",
   "next": "Next",
+  "recent": "Recent",
   "settings": {
     "settings_title": "Settings",
     "settings_description": "Use settings to personalize your app experience.",
@@ -23,7 +25,8 @@
     "management": "Management",
     "home": "Home",
     "customer": "Customers",
-    "order": "Orders"
+    "order": "Orders",
+    "invoice": "Invoice"
   },
   "modules": {
     "customers": {
@@ -41,9 +44,20 @@
       "edit": "Edit Order",
       "save": "Save Order",
       "update": "Update Order"
+    },
+    "invoices": {
+      "index": "Invoices",
+      "create": "Create Invoice",
+      "show": "Invoice Details",
+      "edit": "Edit Invoice",
+      "save": "Save Invoice",
+      "update": "Update Invoice"
     }
   },
   "views": {
+    "dashboard": {
+      "daily_balance": "Daily Balance"
+    },
     "customer": {
       "name": "Customer Name",
       "name_description": "Please enter the customer's full name.",
@@ -108,6 +122,16 @@
       "total_products": "Total Products",
       "total": "Total",
       "product_details": "Product Details"
+    },
+    "invoice": {
+      "number": "Invoice Number",
+      "customer": "Customer",
+      "note": "Order Note",
+      "products": "Products",
+      "total_price": "Total Price",
+      "date": "Invoice Date",
+      "status": "Order Status",
+      "total_products": "Total Products"
     }
   }
   

@@ -45,7 +45,7 @@ input[type="text"] {
 
 
 .MuiOutlinedInput-root{
-  @apply h-12 
+  @apply h-12 bg-white dark:bg-neutral-800
 }
 
 .css-zsp0bh-MuiInputBase-root-MuiOutlinedInput-root{
@@ -70,6 +70,7 @@ input[type="text"] {
   padding-right: 14px;
   border-radius: 10px;
   margin-left: 0px!important;
+  background-color: #ffffff;
 }
 
 .MuiTypography-root{
@@ -88,6 +89,7 @@ input[type="text"] {
 
 .dark .MuiFormControlLabel-root{
   border: 1px solid #5b5b5b;
+  background-color: #262626;
 }
 
 .dark .MuiStepper-root{
@@ -147,3 +149,9 @@ input[type="text"] {
     width: 750px;
   }
 }
+
+/*Dashboard Graphics*/
+.recharts-legend-wrapper{
+  @apply hidden
+}
+

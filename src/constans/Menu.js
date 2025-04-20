@@ -26,6 +26,11 @@ export const menu = [
       {
         key: "menu.order",
         path: "/order",
+        icon: "boxes"
+      },
+      {
+        key: "menu.invoice",
+        path: "/invoice",
         icon: "file-invoice"
       }
     ]

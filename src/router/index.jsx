@@ -12,6 +12,10 @@ import Order from '../views/order'
 import CreateOrder from '../views/order/create'
 import ShowOrder from '../views/order/show'
 
+// Invoice
+import Invoice from '../views/invoice'
+import ShowInvoice from '../views/invoice/show'
+
 export const router = createBrowserRouter([
   {
     path: '/', 
@@ -30,6 +34,10 @@ export const router = createBrowserRouter([
       { path: '/order/create', element: <CreateOrder /> },
       { path: '/order/:id', element: <ShowOrder /> },
       { path: '/order/:id/edit', element: <CreateOrder /> },
+
+      // Invoice
+      { path: '/invoice', element: <Invoice /> },
+      { path: '/invoice/:id', element: <ShowInvoice /> },
     ]
   },
 ])

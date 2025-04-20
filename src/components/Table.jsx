@@ -8,7 +8,7 @@ import AppButton from './Button'
 import Icon from './Icon'
 import { useTranslation } from 'react-i18next'
 
-export default function AppTable({ rows, loading, headerCells, rowCells, columnWidths, deleteAction }) {
+export default function AppTable({ rows, loading, headerCells, rowCells, columnWidths, deleteAction, deletable = true }) {
   const { t } = useTranslation()
   const dispatch = useDispatch()
   const [selectedRow, setSelectedRow] = useState(null)
@@ -27,8 +27,8 @@ export default function AppTable({ rows, loading, headerCells, rowCells, columnW
   const deleteRow = () => {
     if (selectedRow) {
       dispatch(deleteAction(selectedRow))
-        setSelectedRow(null)
-      }
+      setSelectedRow(null)
+    }
   }
 
   const filteredRows = rows.filter(row =>
@@ -93,12 +93,15 @@ export default function AppTable({ rows, loading, headerCells, rowCells, columnW
                 return (
                   <TableRow key={row.id} hover selected={isItemSelected}>
                     <TableCell padding="checkbox">
-                      <Checkbox
-                        checked={isItemSelected}
-                        onChange={() => handleSelect(row.id)}
-                        onClick={(e) => e.stopPropagation()}
-                      />
+                      {deletable && (
+                        <Checkbox
+                          checked={isItemSelected}
+                          onChange={() => handleSelect(row.id)}
+                          onClick={(e) => e.stopPropagation()}
+                        />
+                      )}
                     </TableCell>
+
                     {rowCells(row).map((cell, i) => (
                       <TableCell
                         key={i}

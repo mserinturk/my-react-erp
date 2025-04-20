@@ -59,7 +59,7 @@ function Menu() {
               animate={{ opacity: 1, x: 0 }}
               exit={{ opacity: 0, x: -100 }}
               transition={{ duration: 0.1 }}
-              className="fixed top-0 left-0 w-full h-full bg-white dark:bg-neutral-900 shadow-lg z-50"
+              className="fixed top-0 left-0 w-full h-full bg-white dark:bg-neutral-900 shadow-lg z-50 flex flex-col"
             >
               <div className='flex justify-between p-5 items-center border-b border-gray-200 dark:border-neutral-700'>
                 <Link to={'/'} className='flex items-center justify-center space-x-1.5'>
@@ -68,7 +68,7 @@ function Menu() {
                 </Link>
                 <Icon name="xmark" type="duotone" className="text-xl" onClick={closeMobileMenu} />
               </div>
-              <div className="p-5">
+              <div className="p-5 h-full">
                 {MenuList.map(menu => (
                   <SimpleTreeView key={menu.key}>
                     <TreeItem itemId={menu.id} label={t(menu.key)} className='!pb-3'>
@@ -81,6 +81,17 @@ function Menu() {
                     </TreeItem>
                   </SimpleTreeView>
                 ))}
+              </div>
+              <div className='p-5 border-t border-gray-200 dark:border-neutral-800 flex space-x-3 items-center justify-between'>
+                <div className='flex items-center space-x-2'>
+                  <div className='bg-gray-50 dark:bg-neutral-800 w-10 h-10 flex items-center justify-center rounded-full'>
+                    <Icon name="user" type="duotone"></Icon>
+                  </div>
+                  <span>
+                    Mertcan Serintürk
+                  </span>
+                </div>
+                <Icon name="gear" onClick={() => setVisible(true)}></Icon>
               </div>
             </motion.div>
           )}
