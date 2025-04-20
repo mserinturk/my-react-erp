@@ -23,17 +23,17 @@ function Header() {
       <div className='w-fit'>
         {
           menu == 'open' ?
-          <Icon name="bars-staggered" type="solid" className="!text-blue-600" onClick={()=>{toggleMenu('close')}}></Icon>
+          <Icon name="bars-staggered" type="solid" className="!text-blue-600 !hidden md:!block" onClick={()=>{toggleMenu('close')}}></Icon>
           :
           <div>
             <div className="!text-blue-600 hidden md:block">
               <Icon name="bars" type="solid" onClick={()=>{toggleMenu('open')}}></Icon>
             </div>
-            <div className="!text-blue-600 block md:!hidden">
-              <Icon name="bars" type="solid" onClick={openMobileMenu}></Icon>
-            </div>
           </div>
         }
+         <div className="!text-blue-600 block md:!hidden">
+            <Icon name="bars" type="solid" onClick={openMobileMenu}></Icon>
+          </div>
       </div>
       <div className='flex-1 hidden sm:flex justify-center'>
         <Search></Search>

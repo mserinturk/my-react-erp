@@ -28,39 +28,75 @@ body{
   width: 100vw;
 }
 
+.app-hide-scroll {
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none;  /* IE 10+ */
+}
+
+.app-hide-scroll::-webkit-scrollbar {
+  display: none; /* Chrome, Safari, Opera */
+}
+
 input[type="text"] {
   @apply focus:outline-0 focus:border-gray-400 dark:focus:border-neutral-700
 }
 
-.MuiInputBase-fullWidth{
-  border-radius: 14px!important;
+/*Mui Form Elements*/
+
+
+.MuiOutlinedInput-root{
+  @apply h-12 
 }
 
-.MuiInputBase-fullWidth{
-  @apply h-11 rounded-4xl
+.css-zsp0bh-MuiInputBase-root-MuiOutlinedInput-root{
+  @apply h-24
 }
 
-@media only screen and (min-width: 640px) {
-  .app-modal-large{
-    height: 80vh;
-    margin-top: 5vh;
-    margin-bottom: 5vh;
-    max-width: 90%;
-    width: 850px;
-  }
-  
-  .app-modal-mini{
-    height: 40vh;
-    margin-top: 5vh;
-    margin-bottom: 35vh;
-    max-width: 90%;
-    width: 750px;
-  }
+.dark .css-1m6yt4x-MuiInputBase-root-MuiOutlinedInput-root{
+  @apply h-24 border
+}
+
+.MuiInputBase-root{
+  border-radius: 10px!important;
+}
+
+.MuiPickersInputBase-root{
+  border-radius: 10px!important;
+  height: 48px!important;
+}
+
+.MuiFormControlLabel-root{
+  border: 1px solid #ebeaea;
+  padding-right: 14px;
+  border-radius: 10px;
+  margin-left: 0px!important;
+}
+
+.MuiTypography-root{
+  font-size: 13px!important;
+  color: #535353;
+}
+
+/*Dark*/
+.dark .css-cqzddj-MuiInputBase-root-MuiOutlinedInput-root{
+  @apply h-24
+}
+
+.dark .MuiTypography-root{
+  color: #ccc;
+}
+
+.dark .MuiFormControlLabel-root{
+  border: 1px solid #5b5b5b;
+}
+
+.dark .MuiStepper-root{
+  background-color: rgb(43, 43, 43)!important;
 }
 
 /*Mui Menu Design*/
 .MuiSimpleTreeView-root.css-1o8c9x7-MuiSimpleTreeView-root .MuiTreeItem-content.css-1kk8xoz-MuiTreeItem-content{
-  padding: 12px 0; 
+  padding: 10px 0; 
 }
 
 .MuiCollapse-wrapper .MuiTreeItem-iconContainer{
@@ -82,10 +118,32 @@ input[type="text"] {
 }
 
 /*Table*/
+.MuiPaper-root{
+  box-shadow: none!important;
+}
+
 .MuiTableBody-root{
   @apply dark:bg-neutral-900 bg-white
 }
 
 .MuiTableBody-root td{
   @apply text-gray-500 dark:text-neutral-400
+}
+
+@media only screen and (min-width: 640px) {
+  .app-modal-large{
+    height: 80vh;
+    margin-top: 5vh;
+    margin-bottom: 5vh;
+    max-width: 90%;
+    width: 850px;
+  }
+  
+  .app-modal-mini{
+    height: 40vh;
+    margin-top: 5vh;
+    margin-bottom: 35vh;
+    max-width: 90%;
+    width: 750px;
+  }
 }

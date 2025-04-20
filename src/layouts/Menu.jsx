@@ -73,9 +73,9 @@ function Menu() {
                   <SimpleTreeView key={menu.key}>
                     <TreeItem itemId={menu.id} label={t(menu.key)} className='!pb-3'>
                       {menu.children.map(children => (
-                        <Link key={children.key} to={children.path} onClick={closeMobileMenu} className='flex items-center pl-3 py-2'>
-                          <Icon name={children.icon}></Icon>
-                          <TreeItem itemId={children.key} label={t(children.key)} />
+                        <Link key={children.key} to={children.path} onClick={closeMobileMenu} className='flex items-center pl-3'>
+                          <Icon name={children.icon} className="!text-base"></Icon>
+                          <TreeItem itemId={children.key} label={t(children.key)} className='!ml-2' />
                         </Link>
                       ))}
                     </TreeItem>
@@ -117,7 +117,7 @@ function Menu() {
           </div>
         </div>
 
-        <div className={`${menuState == 'open' ? 'w-64 px-5 transition-all' : 'w-0 transition-all overflow-hidden'}`}>
+        <div className={`${menuState == 'open' ? 'w-64 px-5 transition-all dark:bg-neutral-900' : 'w-0 transition-all overflow-hidden'}`}>
           {MenuList.filter(menu => menu.id === activeGroupId).map((menu) => (
             <nav key={menu.key} className='h-full'>
               <div className='h-20 flex items-center'>{t(menu.key)}</div>

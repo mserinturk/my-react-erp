@@ -11,8 +11,8 @@ function Label(props) {
         <Icon name={icon}></Icon>
       </div>
       <div>
-        <h2 className='font-semibold text-sm dark:text-neutral-400'>{title}</h2>
-        <span className='text-sm text-gray-500 dark:text-neutral-500'>{children}</span>
+        <h2 className='font-semibold text-sm dark:text-neutral-500'>{title}</h2>
+        <span className='text-sm text-gray-500 dark:text-neutral-300'>{children}</span>
       </div>
     </div>
   )

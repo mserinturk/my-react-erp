@@ -1,30 +1,35 @@
 import { createBrowserRouter } from "react-router-dom"
 import MainLayout from '../layouts/MainLayout'
 import Home from '../views/Home'
-import User from '../views/User'
-import Todo from '../views/Todo'
-import Operation from '../views/Operation'
-import Profile from '../views/Profile'
-import Team from '../views/teams'
-import CreateTeam from '../views/teams/create'
-import ShowTeam from '../views/teams/show'
+
+// Customer
+import Customer from '../views/customer'
+import CreateCustomer from '../views/customer/create'
+import ShowCustomer from '../views/customer/show'
+
+// Order
+import Order from '../views/order'
+import CreateOrder from '../views/order/create'
+import ShowOrder from '../views/order/show'
 
 export const router = createBrowserRouter([
   {
     path: '/', 
     element: <MainLayout />,
     children: [
-      {path: '/', element: <Home />},
-      {path: '/user', element: <User />},
-      {path: '/todo', element: <Todo />},
-      {path: '/operation', element: <Operation />},
-      {path: '/profile', element: <Profile />},
-      {path: '/teams', element: <Team />},
-      {path: '/teams/create', element: <CreateTeam />},
-      {path: '/teams/:id', element: <ShowTeam />},
-      {path: '/teams/:id/edit', element: <CreateTeam />},
+      { path: '/', element: <Home /> },
+
+      // Customer
+      { path: '/customer', element: <Customer /> },
+      { path: '/customer/create', element: <CreateCustomer /> },
+      { path: '/customer/:id', element: <ShowCustomer /> },
+      { path: '/customer/:id/edit', element: <CreateCustomer /> },
+
+      // Order
+      { path: '/order', element: <Order /> },
+      { path: '/order/create', element: <CreateOrder /> },
+      { path: '/order/:id', element: <ShowOrder /> },
+      { path: '/order/:id/edit', element: <CreateOrder /> },
     ]
   },
 ])
-
-

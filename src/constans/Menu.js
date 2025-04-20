@@ -10,34 +10,24 @@ export const menu = [
         path: "/",
         icon: "home",
       },
-      {
-        key: "menu.team",
-        path: "/teams",
-        icon: "users",
-      },
-      {
-        key: "menu.user",
-        path: "/user",
-        icon: "user",
-      },
-      {
-        key: "menu.todo",
-        path: "/todo",
-        icon: "check",
-      },
     ]
   },
   {
-    id: "operation",
-    key: "menu.operation",
-    path: "/operation",
-    icon: "user",
+    id: "management",
+    key: "menu.management",
+    path: "/customer",
+    icon: "briefcase",
     children: [
       {
-        key: "menu.operation1",
-        path: "/operation",
-        icon: "clock",
+        key: "menu.customer",
+        path: "/customer",
+        icon: "user-group"
       },
+      {
+        key: "menu.order",
+        path: "/order",
+        icon: "file-invoice"
+      }
     ]
   }
 ]

@@ -25,9 +25,10 @@ export const CustomThemeProvider = ({ children }) => {
 
   const muiTheme = createTheme({
     palette: {
-      mode: theme
+      mode: theme,
     }
   })
+
 
   return (
     <ThemeContext.Provider value={{ theme, toggleTheme }}>

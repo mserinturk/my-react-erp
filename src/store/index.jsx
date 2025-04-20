@@ -1,12 +1,10 @@
 import { configureStore } from "@reduxjs/toolkit";
-import userReducer from "../features/user/UserSlice";
-import todoReducer from "../features/todo/TodoSlice"
-import teamReducer from "../features/team/TeamSlice"
+import customerReducer from "../features/customer/CustomerSlice"
+import orderReducer from "../features/order/OrderSlice"
 
 export const store = configureStore({
   reducer: {
-    user: userReducer,
-    todo: todoReducer,
-    team: teamReducer
+    customer: customerReducer,
+    order: orderReducer
   },
 })

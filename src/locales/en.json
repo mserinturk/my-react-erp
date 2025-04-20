@@ -2,6 +2,12 @@
   "search": "Search",
   "search_not_found_description": "No results found for",
   "popular_search": "Popular Search",
+  "delete": "Delete",
+  "yes": "Yes",
+  "no": "No",
+  "add": "Add",
+  "back": "Back",
+  "next": "Next",
   "settings": {
     "settings_title": "Settings",
     "settings_description": "Use settings to personalize your app experience.",
@@ -14,32 +20,94 @@
   },
   "menu": {
     "dashboard": "Dashboard",
+    "management": "Management",
     "home": "Home",
-    "team": "Team",
-    "user": "User",
-    "todo": "Todo",
-    "operation": "Operation",
-    "operation1": "Operation"
+    "customer": "Customers",
+    "order": "Orders"
   },
   "modules": {
-    "teams": {
-      "index": "Teams",
-      "create": "Create Team",
-      "show": "Team Details",
-      "edit": "Edit Team",
-      "save": "Save Team",
-      "update": "Update Team"
+    "customers": {
+      "index": "Customers",
+      "create": "Create Customer",
+      "show": "Customer Details",
+      "edit": "Edit Customer",
+      "save": "Save Customer",
+      "update": "Update Customer"
+    },
+    "orders": {
+      "index": "Orders",
+      "create": "Create Order",
+      "show": "Order Details",
+      "edit": "Edit Order",
+      "save": "Save Order",
+      "update": "Update Order"
     }
   },
   "views": {
-    "teams": {
-      "id": "Team ID",
-      "name": "Team Name",
-      "name_description": "Please specify the team name.",
-      "description": "Team Description",
-      "description_description": "Please specify your team's description.",
-      "created_at": "Created At"
-      
+    "customer": {
+      "name": "Customer Name",
+      "name_description": "Please enter the customer's full name.",
+      "email": "Email Address",
+      "email_description": "Enter a valid email address.",
+      "phone": "Phone Number",
+      "phone_description": "Enter the customer's phone number.",
+      "status": "Status",
+      "status_description": "Select the status of the customer.",
+      "type": "Customer Type",
+      "type_description": "Specify whether the customer is an individual or a company.",
+      "active": "Active",
+      "inactive": "Inactive",
+      "contact_person": "Contact Person",
+      "contact_person_description": "Who is the primary contact for this customer?",
+      "tax_number": "Tax Number",
+      "tax_number_description": "Provide the tax number if applicable.",
+      "tax_office": "Tax Office",
+      "tax_office_description": "Provide the tax office name.",
+      "country": "Country",
+      "country_description": "Specify the country where the customer is located.",
+      "address": "Address",
+      "address_description": "Provide the customer's full address.",
+      "notes": "Notes",
+      "notes_description": "Any additional information about this customer.",
+      "sidebar_title": "Customer Details",
+      "created_at": "Created At",
+      "status_true": "Active",
+      "status_false": "Passive",
+      "type_individual": "Individual",
+      "type_company": "Company"
+    },
+    "order": {
+      "name": "Order ID",
+      "step_customer": "Customer Information",
+      "step_products": "Products",
+      "step_final": "Order Details",
+      "step_preview": "Preview",
+      "customer": "Customer",
+      "customer_description": "Select the customer placing the order.",
+      "order_note": "Order Note",
+      "order_note_description": "Additional notes or comments about the order.",
+      "product": "Product",
+      "product_description": "Select a product to include in the order.",
+      "products": "Products",
+      "quantity": "Quantity",
+      "quantity_description": "Specify how many units of the product are being ordered.",
+      "price": "Price",
+      "price_description": "Price per unit of the selected product.",
+      "total_price": "Total Price",
+      "date": "Order Date",
+      "date_description": "Set the date when the order is created.",
+      "shipping_method": "Shipping Method",
+      "shipping_method_description": "Specify how the order will be shipped.",
+      "status": "Status",
+      "status_description": "Select the current status of the order.",
+      "status_pending": "Pending",
+      "status_shipped": "Shipped",
+      "status_delivered": "Delivered",
+      "invoice": "Create Invoice",
+      "invoice_description": "Would you like to generate an invoice for this order?",
+      "total_products": "Total Products",
+      "total": "Total",
+      "product_details": "Product Details"
     }
   }
   

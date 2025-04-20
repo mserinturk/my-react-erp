@@ -8,4 +8,14 @@ export default defineConfig({
   plugins: [
     react(),
     tailwindcss(),],
+  build: {
+    rollupOptions: {
+      output: {
+        manualChunks: {
+          mui: ['@mui/material', '@mui/icons-material'],
+          react: ['react', 'react-dom'],
+        }
+      }
+    }
+  }
 })
