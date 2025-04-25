@@ -98,17 +98,13 @@ function Search() {
                   <Icon name="home" className="text-sm"></Icon>
                   <span>{t('menu.home')}</span>
                 </Link>
-                <Link to={'/user'} onClick={() => completeSearch()} className='border border-gray-200 dark:border-neutral-700 text-sm rounded-xl p-3 flex space-x-3 hover:bg-gray-50 dark:hover:bg-neutral-800'>
-                  <Icon name="user" className="text-sm"></Icon>
-                  <span>{t('menu.user')}</span>
+                <Link to={'/customer'} onClick={() => completeSearch()} className='border border-gray-200 dark:border-neutral-700 text-sm rounded-xl p-3 flex space-x-3 hover:bg-gray-50 dark:hover:bg-neutral-800'>
+                  <Icon name="users" className="text-sm"></Icon>
+                  <span>{t('menu.customer')}</span>
                 </Link>
-                <Link to={'/todo'} onClick={() => completeSearch()} className='border border-gray-200 dark:border-neutral-700 text-sm rounded-xl p-3 flex space-x-3 hover:bg-gray-50 dark:hover:bg-neutral-800'>
-                  <Icon name="check" className="text-sm"></Icon>
-                  <span>{t('menu.todo')}</span>
-                </Link>
-                <Link to={'/operation'} onClick={() => completeSearch()} className='border border-gray-200 dark:border-neutral-700 text-sm rounded-xl p-3 flex space-x-3 hover:bg-gray-50 dark:hover:bg-neutral-800'>
-                  <Icon name="clock" className="text-sm"></Icon>
-                  <span>{t('menu.operation1')}</span>
+                <Link to={'/order'} onClick={() => completeSearch()} className='border border-gray-200 dark:border-neutral-700 text-sm rounded-xl p-3 flex space-x-3 hover:bg-gray-50 dark:hover:bg-neutral-800'>
+                  <Icon name="boxes" className="text-sm"></Icon>
+                  <span>{t('menu.order')}</span>
                 </Link>
               </div>
             </div>
