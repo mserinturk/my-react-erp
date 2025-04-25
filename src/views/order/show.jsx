@@ -37,7 +37,11 @@ function OrderShow() {
         icon="cart-shopping"
       >
         <Link to={`/order/create`}>
-          <AppButton prefixIcon="circle-plus">{t('modules.orders.create')}</AppButton>
+          <AppButton prefixIcon="circle-plus" mobileIcon={true}>
+            <span className='hidden sm:block'>
+              {t('modules.orders.create')}
+            </span>
+          </AppButton>
         </Link>
       </ModuleHeader>
       <ModuleBody>

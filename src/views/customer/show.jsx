@@ -33,10 +33,18 @@ function show() {
       >
         <div className='flex space-x-3'>
           <Link to={'/customer/' + id + '/edit'}>
-            <AppButton prefixIcon="pen-to-square">{t('modules.customers.edit')}</AppButton>
+            <AppButton prefixIcon="pen-to-square" mobileIcon={true}>
+              <span className='hidden sm:block'>
+                {t('modules.customers.edit')}
+              </span>
+            </AppButton>
           </Link>
           <Link to={'/customer/create'}>
-            <AppButton prefixIcon="circle-plus">{t('modules.customers.create')}</AppButton>
+            <AppButton prefixIcon="circle-plus" mobileIcon={true}>
+              <span className='hidden sm:block'>
+                {t('modules.customers.create')}
+              </span>
+            </AppButton>
           </Link>
         </div>
       </ModuleHeader>

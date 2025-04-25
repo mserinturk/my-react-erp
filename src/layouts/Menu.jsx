@@ -73,7 +73,7 @@ function Menu() {
                   <SimpleTreeView key={menu.key}>
                     <TreeItem itemId={menu.id} label={t(menu.key)} className='!pb-3'>
                       {menu.children.map(children => (
-                        <Link key={children.key} to={children.path} onClick={closeMobileMenu} className='flex items-center pl-3'>
+                        <Link key={children.key} to={children.path} onClick={closeMobileMenu} className='flex items-center pl-3 my-3'>
                           <Icon name={children.icon} className="!text-base"></Icon>
                           <TreeItem itemId={children.key} label={t(children.key)} className='!ml-2' />
                         </Link>

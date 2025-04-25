@@ -28,9 +28,6 @@ function InvoiceIndex() {
   return (
     <Module>
       <ModuleHeader title={t('modules.invoices.index')} icon="file-invoice">
-        <Link to="/order">
-          <AppButton prefixIcon="cart-shopping">{t('modules.orders.index')}</AppButton>
-        </Link>
       </ModuleHeader>
       <ModuleBody>
         <ModuleMain>

@@ -40,10 +40,10 @@ function Search() {
 
   return (
     <div>
-      <div className='flex sm:hidden'>
+      <div className='flex lg:hidden'>
         <Icon name="magnifying-glass" onClick={() => { setVisible(true) }}></Icon>
       </div>
-      <div className='w-96 relative hidden sm:block'>
+      <div className='w-96 relative hidden lg:block'>
         <div className='flex items-center relative'>
           <div
             onClick={() => { setVisible(true) }}
@@ -93,7 +93,7 @@ function Search() {
             :
             <div>
               <h3 className='text-sm font-medium mb-3'>{t('popular_search')}</h3>
-              <div className='grid grid-cols-1 sm:grid-cols-4 gap-3 sm:gap-6'>
+              <div className='grid grid-cols-1 lg:grid-cols-4 gap-3 lg:gap-6'>
                 <Link to={'/'} onClick={() => completeSearch()} className='border border-gray-200 dark:border-neutral-700 text-sm rounded-xl p-3 flex space-x-3 hover:bg-gray-50 dark:hover:bg-neutral-800'>
                   <Icon name="home" className="text-sm"></Icon>
                   <span>{t('menu.home')}</span>

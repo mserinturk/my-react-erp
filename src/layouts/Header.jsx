@@ -35,14 +35,16 @@ function Header() {
             <Icon name="bars" type="solid" onClick={openMobileMenu}></Icon>
           </div>
       </div>
-      <div className='flex-1 hidden sm:flex justify-center'>
-        <Search></Search>
+      <div className='flex-1 lg:hidden flex justify-center'>
+        <div className='w-fit'>
+          <Link to={"/"} className='flex items-center justify-center space-x-1.5 w-fit'>
+            <Icon name="superpowers" type="brands" className="!text-xl text-blue-600" />
+            <span className='text-sm'>My React APP</span>
+          </Link>
+        </div>
       </div>
-      <div className='flex-1 sm:hidden'>
-        <Link to={"/"} className='flex items-center justify-center space-x-1.5'>
-          <Icon name="superpowers" type="brands" className="!text-xl text-blue-600" />
-          <span className='text-sm'>My React APP</span>
-        </Link>
+      <div className='lg:flex-1 flex justify-center'>
+        <Search></Search>
       </div>
     </div>
   )

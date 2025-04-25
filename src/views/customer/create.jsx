@@ -65,8 +65,10 @@ function Create() {
         title={!id ? t('modules.customers.create') : t('modules.customers.update')}
         icon="users"
       >
-        <AppButton prefixIcon="save" onClick={save}>
-          {id ? t('modules.customers.update') : t('modules.customers.save')}
+        <AppButton prefixIcon="save" mobileIcon={true} onClick={save}>
+          <span className='hidden sm:block'>
+            {id ? t('modules.customers.update') : t('modules.customers.save')}
+          </span>
         </AppButton>
       </ModuleHeader>
       <ModuleBody>

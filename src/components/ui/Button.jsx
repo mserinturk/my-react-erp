@@ -2,9 +2,9 @@ import React from 'react'
 import Icon from './Icon'
 
 function Button(props) {
-  const { children, prefixIcon, suffixIcon, onClick, disabled, color = 'default' } = props
+  const { children, prefixIcon, suffixIcon, onClick, disabled, mobileIcon = false, color = 'default' } = props
 
-  const baseClasses = 'px-5 py-3 rounded-xl text-xs flex items-center !space-x-2'
+  const baseClasses = 'px-5 py-3 rounded-xl text-xs flex items-center'
   const disabledClasses = 'opacity-50 cursor-not-allowed'
   
   const colorClasses = {
@@ -24,9 +24,9 @@ function Button(props) {
           ${disabled ? disabledClasses : 'cursor-pointer'}
         `}
       >
-        {prefixIcon && <Icon name={prefixIcon} className="!text-xs" />}
+        {prefixIcon && <Icon name={prefixIcon} className={`!text-xs ${mobileIcon ? 'mr-0 sm:mr-2' : 'mr-2'}`} />}
         <span>{children}</span>
-        {suffixIcon && <Icon name={suffixIcon} className="!text-xs" />}
+        {suffixIcon && <Icon name={suffixIcon} className={`!text-xs ${mobileIcon ? 'ml-0 sm:ml-2' : 'ml-2'}`} />}
       </button>
     </div>
   )

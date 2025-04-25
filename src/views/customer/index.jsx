@@ -25,7 +25,11 @@ function CustomerIndex() {
     <Module>
       <ModuleHeader title={t('modules.customers.index')} icon="users">
         <Link to={'/customer/create'}>
-          <AppButton prefixIcon="users">{t('modules.customers.create')}</AppButton>
+          <AppButton prefixIcon="users" mobileIcon={true}>
+            <span className='hidden sm:block'>
+              {t('modules.customers.create')}
+            </span>
+            </AppButton>
         </Link>
       </ModuleHeader>
       <ModuleBody>

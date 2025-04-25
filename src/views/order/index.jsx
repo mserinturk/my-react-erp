@@ -29,7 +29,11 @@ function OrderIndex() {
     <Module>
       <ModuleHeader title={t('modules.orders.index')} icon="cart-shopping">
         <Link to={'/order/create'}>
-          <AppButton prefixIcon="cart-shopping">{t('modules.orders.create')}</AppButton>
+          <AppButton prefixIcon="cart-shopping" mobileIcon={true}>
+            <span className='hidden sm:block'>
+              {t('modules.orders.create')}
+            </span>
+          </AppButton>
         </Link>
       </ModuleHeader>
       <ModuleBody>
