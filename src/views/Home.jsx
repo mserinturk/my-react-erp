@@ -50,7 +50,7 @@ function Home() {
           </span>
           <div>
             <span className='text-gray-200 dark:text-neutral-100 text-2xl mr-2'>{t('welcome')}</span>
-            <span className='text-2xl font-semibold text-gray-200 dark:text-white'>Mertcan</span>
+            <span className='text-2xl font-semibold text-gray-200 dark:text-white'>Mert</span>
           </div>
           <div>
             <Icon name="door-open" className="absolute top-3 right-3 !text-4xl text-white"></Icon>
