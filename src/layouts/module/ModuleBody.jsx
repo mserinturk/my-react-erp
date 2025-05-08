@@ -5,7 +5,7 @@ function ModuleBody(props) {
   const {children} = props
 
   return (
-    <div className='h-full w-full overflow-auto py-5 md:space-x-6 flex flex-col md:flex-row app-hide-scroll'>
+    <div className='h-full w-full overflow-auto py-5 md:space-x-6 flex flex-col lg:flex-row app-hide-scroll'>
       {children}
     </div>
   )

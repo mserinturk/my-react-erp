@@ -51,54 +51,70 @@ function Menu() {
 
   return (
     <div className='h-full flex'>
-      <div className='md:hidden'>
+      <div className='lg:hidden'>
         <AnimatePresence>
           {mobileMenu && (
-            <motion.div
-              initial={{ opacity: 0, x: -100 }}
-              animate={{ opacity: 1, x: 0 }}
-              exit={{ opacity: 0, x: -100 }}
-              transition={{ duration: 0.1 }}
-              className="fixed top-0 left-0 w-full h-full bg-white dark:bg-neutral-900 shadow-lg z-50 flex flex-col"
-            >
-              <div className='flex justify-between p-5 items-center border-b border-gray-200 dark:border-neutral-700'>
-                <Link to={'/'} className='flex items-center justify-center space-x-1.5'>
-                  <Icon name="superpowers" type="brands" className="!text-xl text-blue-600" />
-                  <span className='text-sm'>My React APP</span>
-                </Link>
-                <Icon name="xmark" type="duotone" className="text-xl" onClick={closeMobileMenu} />
-              </div>
-              <div className="p-5 h-full">
-                {MenuList.map(menu => (
-                  <SimpleTreeView key={menu.key}>
-                    <TreeItem itemId={menu.id} label={t(menu.key)} className='!pb-3'>
-                      {menu.children.map(children => (
-                        <Link key={children.key} to={children.path} onClick={closeMobileMenu} className='flex items-center pl-3 my-3'>
-                          <Icon name={children.icon} className="!text-base"></Icon>
-                          <TreeItem itemId={children.key} label={t(children.key)} className='!ml-2' />
-                        </Link>
-                      ))}
-                    </TreeItem>
-                  </SimpleTreeView>
-                ))}
-              </div>
-              <div className='p-5 border-t border-gray-200 dark:border-neutral-800 flex space-x-3 items-center justify-between'>
-                <div className='flex items-center space-x-2'>
-                  <div className='bg-gray-50 dark:bg-neutral-800 w-10 h-10 flex items-center justify-center rounded-full'>
-                    <Icon name="user" type="duotone"></Icon>
-                  </div>
-                  <span>
-                    Mertcan Serintürk
-                  </span>
+            <>
+              {/* 🔲 Arkaplan Overlay */}
+              <motion.div
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                exit={{ opacity: 0 }}
+                transition={{ duration: 0.2 }}
+                onClick={closeMobileMenu}
+                className="fixed inset-0 bg-black/90 z-40"
+              />
+
+              {/* 📱 Mobile Menü */}
+              <motion.div
+                initial={{ opacity: 0, x: -100 }}
+                animate={{ opacity: 1, x: 0 }}
+                exit={{ opacity: 0, x: -100 }}
+                transition={{ duration: 0.1 }}
+                className="fixed top-0 left-0 w-full sm:w-96 h-full bg-white dark:bg-neutral-900 shadow-lg z-50 flex flex-col"
+              >
+                {/* Üst Bar */}
+                <div className='flex justify-between p-5 items-center border-b border-gray-200 dark:border-neutral-700'>
+                  <Link to={'/'} className='flex items-center justify-center space-x-1.5'>
+                    <Icon name="superpowers" type="brands" className="!text-xl text-blue-600" />
+                    <span className='text-sm'>My React APP</span>
+                  </Link>
+                  <Icon name="xmark" type="duotone" className="text-xl" onClick={closeMobileMenu} />
                 </div>
-                <Icon name="gear" onClick={() => setVisible(true)}></Icon>
-              </div>
-            </motion.div>
+
+                {/* Menü Listesi */}
+                <div className="p-5 h-full overflow-y-auto">
+                  {MenuList.map(menu => (
+                    <SimpleTreeView key={menu.key}>
+                      <TreeItem itemId={menu.id} label={t(menu.key)} className='!pb-3'>
+                        {menu.children.map(children => (
+                          <Link key={children.key} to={children.path} onClick={closeMobileMenu} className='flex items-center pl-3 my-3'>
+                            <Icon name={children.icon} className="!text-base" />
+                            <TreeItem itemId={children.key} label={t(children.key)} className='!ml-2' />
+                          </Link>
+                        ))}
+                      </TreeItem>
+                    </SimpleTreeView>
+                  ))}
+                </div>
+
+                {/* Footer */}
+                <div className='p-5 border-t border-gray-200 dark:border-neutral-800 flex space-x-3 items-center justify-between'>
+                  <div className='flex items-center space-x-2'>
+                    <div className='bg-gray-50 dark:bg-neutral-800 w-10 h-10 flex items-center justify-center rounded-full'>
+                      <Icon name="user" type="duotone" />
+                    </div>
+                    <span>Mertcan Serintürk</span>
+                  </div>
+                  <Icon name="gear" onClick={() => setVisible(true)} />
+                </div>
+              </motion.div>
+            </>
           )}
         </AnimatePresence>
       </div>
 
-      <div className='hidden md:flex'>
+      <div className='hidden lg:flex'>
         <div className={'h-full w-16 flex flex-col ' + `${menuState == 'open' ? 'border-r border-gray-200 dark:border-neutral-800' : 'border-none'}`}>
           <div className='flex h-20 items-center justify-center'>
             <Link to={'/'}>
@@ -142,7 +158,7 @@ function Menu() {
                           className={`${location.pathname.split('/')[1] === child.path.split('/')[1] ? '!text-blue-600 !pl-3' : ''} flex items-center space-x-2 hover:pl-3 transition-all`}
                         >
                           <div className='w-5 flex justify-center'>
-                            <Icon name={child.icon} className={`${location.pathname.split('/')[1] === child.path.split('/')[1] ? '!text-blue-600' : ''}`} type="duotone"/>
+                            <Icon name={child.icon} className={`${location.pathname.split('/')[1] === child.path.split('/')[1] ? '!text-blue-600' : ''}`} type="duotone" />
                           </div>
                           <span className='ml-1 text-sm'>{t(child.key)}</span>
                         </Link>
